@@ -1,0 +1,71 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+
+Options +FollowSymLinks -MultiViews
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^showcat?$ showcat.php
+RewriteRule ^showcat/?$ showcat.php
+
+
+RewriteRule ^showAuthor?$ showAuthor.php
+RewriteRule ^showAuthor/?$ showAuthor.php
+
+RewriteRule ^showplatform?$ showplatform.php
+RewriteRule ^showplatform/?$ showplatform.php
+
+RewriteRule ^showgames?$ showgames.php
+RewriteRule ^showgames/?$ showgames.php
+
+RewriteRule ^showissue?$ showissue.php
+RewriteRule ^showissue/?$ showissue.php
+
+RewriteRule ^searchGame?$ searchGame.php
+RewriteRule ^searchGame/?$ searchGame.php
+
+RewriteRule ^addplatform?$ addplatform.php
+RewriteRule ^addplatform/?$ addplatform.php
+
+
+RewriteRule ^editcat/?$ editcat.php
+
+
+RewriteRule ^addCat?$ addCat.php
+RewriteRule ^addAuth?$ addAuth.php
+RewriteRule ^issue?$ issue.php
+RewriteRule ^addGame?$ addGame.php
+
+
+RewriteRule ^home?$ home.php
+RewriteRule ^profile?$ profile.php
+RewriteRule ^index?$ index.php
+RewriteRule ^logout?$ logout.php
+RewriteRule ^about?$ about.php
+RewriteRule ^search?$ search.php
+RewriteRule ^search/?$ search.php
+
+
+RewriteRule ^editcat/([0-9]+) editcat.php?id=$1
+RewriteRule ^editAuthor/([0-9]+) editAuthor.php?id=$1
+RewriteRule ^editGame/([0-9]+) editGame.php?id=$1
+RewriteRule ^editissue/([0-9]+) editissue.php?id=$1
+RewriteRule ^editplatform/([0-9]+) editplatform.php?id=$1
+
+
+RewriteRule ^delete_game/([0-9]+) delete_game.php?id=$1
+RewriteRule ^delete_cat/([0-9]+) delete_cat.php?id=$1
+RewriteRule ^delete_auth/([0-9]+) delete_auth.php?id=$1
+RewriteRule ^delete_platform/([0-9]+) delete_platform.php?id=$1
+
+RewriteRule ^delete_issued/([0-9]+)/([0-9]+) delete_issued.php?id=$1&bid=$2
+
+RewriteRule ^search/([0-9]+)/([0-9]+) search.php?search_text=$1&submit=$2
+
+
+RewriteRule ^showcat/(.+) showcat.php?msg=$1
+RewriteRule ^showplatform/(.+) showplatform.php?msg=$1
+RewriteRule ^showAuthor/(.+) showAuthor.php?msg=$1
+RewriteRule ^showgames/(.+) showgames.php?msg=$1
+RewriteRule ^profile/(.+) profile.php?msg=$1
+
